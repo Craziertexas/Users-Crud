@@ -1,0 +1,191 @@
+{
+	"info": {
+		"_postman_id": "9337affe-0af4-42e9-9144-ed255f47da3e",
+		"name": "Users CRUD",
+		"description": "La api Users, es una api desarrollada en Javascript utilizando el framework NodeJS. esta Api se encuentra diseñada bajo la estructura MVC.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13307046"
+	},
+	"item": [
+		{
+			"name": "Index",
+			"item": [
+				{
+					"name": "GetIndex",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://codechallenge-nodejs.uc.r.appspot.com/",
+							"protocol": "https",
+							"host": [
+								"codechallenge-nodejs",
+								"uc",
+								"r",
+								"appspot",
+								"com"
+							],
+							"path": [
+								""
+							]
+						},
+						"description": "Esta ruta corresponde a la pagina de bienvenida de la API."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "GetUsersById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://codechallenge-nodejs.uc.r.appspot.com/users/getusersById/0",
+							"protocol": "https",
+							"host": [
+								"codechallenge-nodejs",
+								"uc",
+								"r",
+								"appspot",
+								"com"
+							],
+							"path": [
+								"users",
+								"getusersById",
+								"0"
+							]
+						},
+						"description": "Esta ruta dinamica es utilizada para obtener la información de los usuarios registrados mediante su ID."
+					},
+					"response": []
+				},
+				{
+					"name": "CreateUsers",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 0,\r\n  \"name\": \"David\",\r\n  \"email\": \"druizeg@gmail.com\",\r\n  \"birthDate\": \"29/12/1999 05:34:23\",\r\n  \"address\": {\r\n    \"id\": 0,\r\n    \"street\": \"Cll 1 Cra 2 - 3\",\r\n    \"state\": \"RealState\",\r\n    \"city\": \"RealCity\",\r\n    \"country\": \"SoRealCountry\",\r\n    \"zip\": \"Ziiip\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://codechallenge-nodejs.uc.r.appspot.com/users/createUsers",
+							"protocol": "https",
+							"host": [
+								"codechallenge-nodejs",
+								"uc",
+								"r",
+								"appspot",
+								"com"
+							],
+							"path": [
+								"users",
+								"createUsers"
+							]
+						},
+						"description": "Ruta utilizada para crear un nuevo usuario"
+					},
+					"response": []
+				},
+				{
+					"name": "GetUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://codechallenge-nodejs.uc.r.appspot.com/users/getusers",
+							"protocol": "https",
+							"host": [
+								"codechallenge-nodejs",
+								"uc",
+								"r",
+								"appspot",
+								"com"
+							],
+							"path": [
+								"users",
+								"getusers"
+							]
+						},
+						"description": "Ruta utilizada para obtener todos los usuarios registrados"
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateUsersById",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 0,\r\n  \"name\": \"Pablo Sanchez\",\r\n  \"email\": \"psanchez@false.com\",\r\n  \"birthDate\": \"01/01/1999\",\r\n  \"address\": {\r\n    \"id\":0,\r\n    \"street\": \"Cll 10 Cra 9 - 8\",\r\n    \"state\": \"AnotherFakeState\",\r\n    \"city\": \"AnotherFakeCity\",\r\n    \"country\": \"AnotherFakeCountry\",\r\n    \"zip\": \"ZiiiiiUp\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://codechallenge-nodejs.uc.r.appspot.com/users/updateUsersById/0",
+							"protocol": "https",
+							"host": [
+								"codechallenge-nodejs",
+								"uc",
+								"r",
+								"appspot",
+								"com"
+							],
+							"path": [
+								"users",
+								"updateUsersById",
+								"0"
+							]
+						},
+						"description": "Ruta utilizada para actualizar los datos de un usuario"
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteUsersById",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://codechallenge-nodejs.uc.r.appspot.com/users/deleteUsersById/0",
+							"protocol": "https",
+							"host": [
+								"codechallenge-nodejs",
+								"uc",
+								"r",
+								"appspot",
+								"com"
+							],
+							"path": [
+								"users",
+								"deleteUsersById",
+								"0"
+							]
+						},
+						"description": "Ruta utilizada para eliminar un usuario mediante su ID."
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "IP",
+			"value": "codechallenge-nodejs.uc.r.appspot.com"
+		}
+	]
+}

@@ -1,0 +1,133 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "default": {},
+    "title": "Root Schema",
+    "required": [
+        "id",
+        "name",
+        "email",
+        "birthDate",
+        "address"
+    ],
+    "properties": {
+        "id": {
+            "type": "integer",
+            "default": 0,
+            "title": "The id Schema",
+            "examples": [
+                0
+            ]
+        },
+        "name": {
+            "type": "string",
+            "default": "",
+            "title": "The name Schema",
+            "examples": [
+                "Name"
+            ]
+        },
+        "email": {
+            "type": "string",
+            "default": "",
+            "title": "The email Schema",
+            "examples": [
+                "example@email.com"
+            ]
+        },
+        "birthDate": {
+            "type": "string",
+            "default": "",
+            "title": "The birthDate Schema",
+            "examples": [
+                "DD/MM/yyyy HH:mm:ss"
+            ]
+        },
+        "address": {
+            "type": "object",
+            "default": {},
+            "title": "The address Schema",
+            "required": [
+                "id",
+                "street",
+                "state",
+                "city",
+                "country",
+                "zip"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "default": 0,
+                    "title": "The id Schema",
+                    "examples": [
+                        0
+                    ]
+                },
+                "street": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The street Schema",
+                    "examples": [
+                        "Cll ## No.## - ##"
+                    ]
+                },
+                "state": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The state Schema",
+                    "examples": [
+                        "State"
+                    ]
+                },
+                "city": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The city Schema",
+                    "examples": [
+                        "City"
+                    ]
+                },
+                "country": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The country Schema",
+                    "examples": [
+                        "Country"
+                    ]
+                },
+                "zip": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The zip Schema",
+                    "examples": [
+                        "Zip"
+                    ]
+                }
+            },
+            "examples": [{
+                "id": 0,
+                "street": "Cll ## No.## - ##",
+                "state": "State",
+                "city": "City",
+                "country": "Country",
+                "zip": "Zip"
+            }]
+        }
+    },
+    "examples": [{
+        "id": 0,
+        "name": "Name",
+        "email": "example@email.com",
+        "birthDate": "DD/MM/yyyy HH:mm:ss",
+        "address": {
+            "id": 0,
+            "street": "Cll ## No.## - ##",
+            "state": "State",
+            "city": "City",
+            "country": "Country",
+            "zip": "Zip"
+        }
+    }]
+}
