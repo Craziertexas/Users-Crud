@@ -1,0 +1,146 @@
+swagger: '2.0'
+info:
+  description: Users API
+  version: 1.0.0
+  title: Users
+  contact:
+    name: David Ruiz
+    email: david.ruiz.co@cloudappi.net
+host: api.users.es
+basePath: /users
+schemes:
+  - http
+  - https
+produces:
+  - application/json
+consumes:
+  - application/json
+tags:
+  - name: users
+paths:
+  /getusers:
+    get:
+      description: Get all users
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/user'
+      operationId: getusers
+      summary: Get users
+      tags:
+        - users
+  /createUsers:
+    post:
+      parameters:
+        - in: body
+          name: user
+          schema:
+            $ref: '#/definitions/user'
+          required: true
+      responses:
+        '201':
+          description: CREATED
+          schema:
+            $ref: '#/definitions/user'
+        '405':
+          description: Invalid input
+      operationId: createUsers
+      summary: Create users
+      tags:
+        - users
+      description: Create user
+  '/getusersById/{userId}':
+    get:
+      description: Get one user
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/user'
+        '400':
+          description: Invalid user id
+        '404':
+          description: User not found
+      operationId: getusersById
+      summary: Get user by id
+      tags:
+        - users
+    parameters:
+      - $ref: '#/parameters/userId'
+  '/updateUsersById/{userId}':
+    put:
+      parameters:
+        - in: body
+          name: user
+          schema:
+            $ref: '#/definitions/user'
+          required: true
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/user'
+        '400':
+          description: Invalid user id
+        '404':
+          description: User not found
+      operationId: updateUsersById
+      description: Update one user
+      tags:
+        - users
+    parameters:
+      - $ref: '#/parameters/userId'
+  '/deleteUsersById/{userId}':
+    delete:
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Invalid user id
+        '404':
+          description: User not found
+      summary: Delete user
+      description: Delete user
+      operationId: deleteUsersById
+      tags:
+        - users
+    parameters:
+      - $ref: '#/parameters/userId'
+definitions:
+  user:
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      email:
+        type: string
+      birthDate:
+        type: string
+        format: LocalDateTime
+        description: LocalDateTime type
+      address:
+        $ref: '#/definitions/address'
+  address:
+    properties:
+      id:
+        type: integer
+      street:
+        type: string
+      state:
+        type: string
+      city:
+        type: string
+      country:
+        type: string
+      zip:
+        type: string
+parameters:
+  userId:
+    name: userId
+    in: path
+    required: true
+    type: string

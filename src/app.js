@@ -34,4 +34,10 @@ App.use(function(err, req, res, next) {
   res.status(500).send("Internal Server Error");
 });
 
+var port = process.env.PORT || 3000; // Specify the port you want the server to listen on
+
+App.listen(port, function() {
+  console.log("Server is running on port " + port);
+});
+
 module.exports = App;
